@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+    <link rel="stylesheet" th:href="@{/css/home.css}"/>
+    -->
+    <title>The Supply Shelf</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <div class="logo-conatiner">
+            <!-- <img th:src="@{/css/images/companylogo.png}" alt="BarCrawls Inc."> -->
+            <img  th:src="@{/css/images/logo.jpg}" alt="The Supply Shelf Logo" class="logo"/>
+
+            <h1>The Supply Shelf</h1>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Browse</a>
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h2>Borrow school supplies on campus</h2>
+            <p>From textbooks to tech – all by students, for students.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for books, chargers, etc.">
+                <button>🔍</button>
+            </div>
+        </div>
+        <img th:src="@{/css/images/abookshelf.png}" alt="Bookshelf illustration" class="hero-image" />
+    </div>
+</section>
+
+</body>
+</html>
