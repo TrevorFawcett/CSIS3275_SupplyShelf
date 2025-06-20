@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login - The Supply Shelf</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<header>
+    <div class="container nav">
+        <div class="logo-conatiner">
+            <!-- <img th:src="@{/css/images/companylogo.png}" alt="BarCrawls Inc."> -->
+            <img  th:src="@{/css/images/logo.jpg}" alt="The Supply Shelf Logo" class="logo"/>
+
+            <h1>The Supply Shelf</h1>
+        </div>
+        <nav>
+            <!-- <a th:href="@{/order/list}"> -->
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/browse}">Browse</a>
+            <a th:href="@{/login}">Login</a>
+            <a th:href="@{/signup}">Signup</a>
+        </nav>
+    </div>
+</header>
+
+
+<body>
+
+<main>
+    <div class="login-container">
+        <form action="/login" method="POST">
+            <h2>Log in</h2>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log in</button>
+            <p>Do not have an account? <a th:href="@{signup-page}">Sign up here!</a></p>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
