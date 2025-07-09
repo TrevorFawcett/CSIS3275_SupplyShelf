@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - The Supply Shelf</title>
+    <!--
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" th:href="@{/css/home.css}"/>
+    -->
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
     <link rel="stylesheet" th:href="@{/css/loginstyle.css}" />
     <script src=
@@ -31,47 +35,19 @@
 
 <body>
 
-<!--
-<section class="login-form">
-    <div class="login-container">
-        <form action="/login" method="POST">
+<main>
+    <div class="containerlogin">
+        <form id="login-form">
             <h2>Log in</h2>
-            <div class ="email">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="password">
-                <label for="password">Password *</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-
-
-            <div>
-                <button class="submit-btn" type="submit">Log in</button>
-                <p>Do not have an account? <a th:href="@{signup-page}">Sign up here!</a></p>
-            </div>
-
-
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log in</button>
+            <p>Do not have an account? <a th:href="@{/signup}" >Sign up here!</a></p>
         </form>
     </div>
-</section>
--->
-<main>
-    <main class="containerlogin">
-        <h2>Login</h2>
-        <form id="login-form">
-            <label class="labels">Email</label>
-                <input type="email" placeholder="Email" required><br><br>
-                <label class="labels">Password</label>
-                <input type="password" placeholder="Password" required><br><br>
-                <button type="submit">Log In</button>
-        </form>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-    </main>
 </main>
-
 <footer class="footer">
     <p>&copy; 2025 The Supply Shelf | Designed for Douglas College Students</p>
 </footer>
@@ -139,6 +115,12 @@
             alert('Login failed: ' + error.message); // Show an error message
         }
     });
+
+
+
+
+
+
 
 </script>
 

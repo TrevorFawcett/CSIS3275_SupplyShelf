@@ -1,0 +1,163 @@
+﻿/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Signup Form Container */
+/*
+.containersignup {
+    flex: 1;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+    .containersignup h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2b6777;
+    }
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2b6777;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+    form button:hover {
+        background-color: #3a8ca2;
+    }
+
+.containersignup p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.containersignup a {
+    color: #2b6777;
+    text-decoration: none;
+}
+
+    .containersignup a:hover {
+        text-decoration: underline;
+    }
+
+
+
+
+
+footer {
+    background-color: #2b6777;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+*/
+
+.containersignup {
+    flex: 1;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.containersignup h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2b6777;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"]
+{
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2b6777;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #3a8ca2;
+}
+
+.labels {
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+.containersignup p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.containersignup a {
+    color: #2b6777;
+    text-decoration: none;
+}
+
+.containersignup a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #2b6777;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}

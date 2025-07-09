@@ -13,7 +13,7 @@
 <body>
 <header>
     <div class="container nav">
-        <div class="logo-conatiner">
+        <div class="logo-container">
             <!-- <img th:src="@{/css/images/companylogo.png}" alt="BarCrawls Inc."> -->
             <img  th:src="@{/css/images/logo.jpg}" alt="The Supply Shelf Logo" class="logo"/>
 
@@ -21,10 +21,23 @@
         </div>
         <nav>
             <!-- <a th:href="@{/order/list}"> -->
-            <a th:href="@{/}">Home</a>
+            <a th:href="@{/home}">Home</a>
             <a th:href="@{/browse}">Browse</a>
-            <a th:href="@{/login}">Login</a>
+            <!--
+            <a th:href="@{/login-page}">Login</a>
             <a th:href="@{/signup}">Signup</a>
+            -->
+            <div class="auth-buttons">
+                <!-- Conditionally show login/signup or signout -->
+                <div th:if="${isLoggedIn}">
+                    <a th:href="@{/userLogin}"> User Profile </a>
+                    <a th:href="@{/signout}"> Log out </a>
+                </div>
+                <div th:if="${!isLoggedIn}">
+                    <a th:href="@{/signup}"> Sign up </a>
+                    <a th:href="@{/login-page}"> Log in </a>
+                </div>
+            </div>
         </nav>
     </div>
 </header>

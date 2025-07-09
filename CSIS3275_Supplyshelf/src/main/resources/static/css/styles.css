@@ -138,9 +138,54 @@ nav a {
     height:150px;
     object-fit:contain;
 }
+/*
 .container.nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:10px 20px;
+}
+*/
+
+
+/* Header and Nav bar used for every page */
+header {
+    background-color: #2b6777;
+    color: white;
+    padding: 1rem 0;
+}
+
+.container.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
