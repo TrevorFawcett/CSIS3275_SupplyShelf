@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image with Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .approve-button:hover {
+            background-color: #4CAF50;
+        }
+        .deny-button:hover {
+            background-color: crimson;
+        }
+        .approve-button {
+            background-color: #8bfa8f;
+        }
+        .deny-button {
+            background-color: #ff5c7e;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Image Example</h1>
+
+<img src="https://via.placeholder.com/300" alt="Example Image">
+
+<div class="button-container">
+    <button class="approve-button" onclick="alert('Button 1 clicked!')">Approve</button>
+    <button class="deny-button" onclick="alert('Button 2 clicked!')">Deny</button>
+</div>
+
+</body>
+</html>
