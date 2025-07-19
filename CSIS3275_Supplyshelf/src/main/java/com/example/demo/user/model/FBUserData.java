@@ -25,4 +25,6 @@ public class FBUserData {
     private String dob;
     private String firstName;
     private String lastName;
+
+
 }

@@ -48,13 +48,14 @@ public class login_controller {
         return "login2";
     }
 
+   /*
    @GetMapping("/userLogin")
     public String userLogin(Model model, HttpSession session) {
 
 
 
         return "user-profile";
-   }
+   } */
 
     FirebaseApp app;
 
@@ -98,6 +99,8 @@ public class login_controller {
 
             model.addAttribute("user", newUser);
             session.setAttribute("isLoggedIn", true);  // Store login status in session
+            String username = newUser.getUsername();
+            session.setAttribute("username", username);
         }
         return "redirect:/";
     }
