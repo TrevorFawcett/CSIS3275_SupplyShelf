@@ -21,7 +21,9 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -62,17 +64,28 @@ public class imageupload_controller {
             Path filePath = uploadPath.resolve(file.getOriginalFilename());
             Path destinationPath = uploadPath.resolve(newFileName2);
 
-            //Files.copy(file.getInputStream(), filePath);
-           Files.copy(file.getInputStream(), destinationPath);
-            //Files.copy(filePath, filePath2);
-            //Files.move(filePath, destinationPath);
+           //Check if image already exists for user
+            List<String> imagesUploaded = imgService.getProfileImages();
 
-            pfp.setImage_url(newFileName2);
-            pfp.setPermission(false);
-            pfp.setDocument_id(userUsername);
-            imgService.createProfileImage(pfp);
+            if(!imagesUploaded.contains(userUsername)) {
+                Files.copy(file.getInputStream(), destinationPath);
 
-            return "Image uploaded successfully: " + file.getName();
+
+                pfp.setImage_url(newFileName2);
+                pfp.setPermission(false);
+                pfp.setDocument_id(userUsername);
+                imgService.createProfileImage(pfp);
+
+            }
+            else{
+                System.out.println("Image already exists");
+            }
+
+
+
+
+           // return "Image uploaded successfully: " + file.getName();
+            return "redirect:userLogin";
         } catch (IOException | InterruptedException | ExecutionException e) {
             return "Error uploading image: " + e.getMessage();
         }

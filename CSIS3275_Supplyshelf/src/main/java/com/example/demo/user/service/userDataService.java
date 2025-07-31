@@ -56,6 +56,9 @@ public class userDataService {
                 String firstName;
                 String lastName;
                 //System.out.println(document.getData().get("firstName").toString());
+
+                boolean admin_permission = (boolean) document.getData().get("permissions");
+
                 if(document.getData().get("firstName")== null){
                     firstName = "";
                 }
@@ -71,7 +74,7 @@ public class userDataService {
                 }
 
 
-                user = new FBUserData(documentId, username, email, dob, firstName, lastName);
+                user = new FBUserData(documentId, username, email, dob, firstName, lastName, admin_permission);
                 userStore.addActiveUser(user);
                 userStore.setUserName(user.getUsername());
 
@@ -83,6 +86,51 @@ public class userDataService {
 
 
 
+    }
+
+    public FBUserData getUser(String userName) throws ExecutionException, InterruptedException{
+        Firestore dbFireStore = FirestoreClient.getFirestore(app);
+
+
+        List<QueryDocumentSnapshot> documents = dbFireStore.collection("user_data").get().get().getDocuments();
+
+        for (QueryDocumentSnapshot document : documents) {
+
+            if (document.getData().get("username").equals(userName)) {
+                String documentId = document.getData().get("document_id").toString();
+                String username = document.getData().get("username").toString();
+                String email = document.getData().get("email").toString();
+                String dob = document.getData().get("dob").toString();
+                //String firstName = document.getData().get("first_name").toString();
+                String firstName;
+                String lastName;
+                //System.out.println(document.getData().get("firstName").toString());
+
+                boolean admin_permission = (boolean) document.getData().get("permissions");
+
+                if(document.getData().get("firstName")== null){
+                    firstName = "";
+                }
+                else{
+                    firstName = document.getData().get("firstName").toString();
+                }
+
+                if(document.getData().get("lastName")== null){
+                    lastName = "";
+                }
+                else{
+                    lastName = document.getData().get("lastName").toString();
+                }
+
+
+                FBUserData user = new FBUserData(documentId, username, email, dob, firstName, lastName, admin_permission);
+                return user;
+            }
+
+
+        }
+
+        return null;
     }
 
     public List<String> getUserNames() throws ExecutionException, InterruptedException {

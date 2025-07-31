@@ -2,14 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Profile</title>
+    <link rel="stylesheet" th:href="@{/css/userprofile.css}" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
+<header>
+    <div class="container nav">
+        <div class="logo-container">
 
+            <img  th:src="@{/css/images/logo.jpg}" alt="The Supply Shelf Logo" class="logo"/>
+
+            <h1>The Supply Shelf</h1>
+        </div>
+        <nav>
+            <!-- <a th:href="@{/order/list}"> -->
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/browse}">Browse</a>
+            <!--
+            <a th:href="@{/login-page}">Login</a>
+            <a th:href="@{/signup}">Signup</a>
+            -->
+
+        </nav>
+    </div>
+</header>
+
+<div class="profile-container">
+    <!--
 <form action="/upload-image" method="post" enctype="multipart/form-data" th:object="${userPfp}">
   <input type="file" name="image" accept="image/*">
   <button type="submit">Upload Image</button>
-</form>
+</form> -->
+
+    <h1>User Profile</h1>
+    <label> Full Name: </label>
+    <h3 th:text="${activeUser.getFirstName()} + ' ' + ${activeUser.getLastName()}" class="mb-3"></h3>
+    <label> Email: </label>
+    <h3 th:text="${activeUser.getEmail()}" class="mb-3"></h3>
+
+
+
+    <a th:href="@{/uploadpage}" class="button">Upload School ID</a>
+</div>
 
 </body>
 </html>
+
+<!--
+<div class="container mt-4">
+    <h1>User Profile</h1>
+    <label> Full Name: </label>
+    <h3 th:text="${accountInfo.firstName} + ' ' + ${accountInfo.lastName}" class="mb-3"></h3>
+    <label> Email: </label>
+    <h3 th:text="${accountInfo.email}" class="mb-3"></h3>
+    <label>Phone Number: </label>
+    <h3 th:text="${accountInfo.phone}" class="mb-3"></h3>
+    <label>Date of Birth: </label>
+    <h3 th:text="${accountInfo.dateofbirth}" class="mb-3"></h3>
+    <label>Address: </label>
+    <h3 th:text="${accountInfo.address}" class="mb-3"></h3>
+</div>
+-->

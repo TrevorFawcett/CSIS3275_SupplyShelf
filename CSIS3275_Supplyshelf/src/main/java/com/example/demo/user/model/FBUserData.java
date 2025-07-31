@@ -8,13 +8,14 @@ import lombok.Setter;
 public class FBUserData {
 
     public FBUserData(String id, String username, String email, String dob, String firstName,
-                      String lastName) {
+                      String lastName, boolean permissions) {
         this.setDocument_id(id);
         this.setUsername(username);
         this.setEmail(email);
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setDob(dob);
+        this.setPermissions(permissions);
     }
 
     public FBUserData() {}
@@ -25,6 +26,6 @@ public class FBUserData {
     private String dob;
     private String firstName;
     private String lastName;
-
+    private boolean permissions;
 
 }
